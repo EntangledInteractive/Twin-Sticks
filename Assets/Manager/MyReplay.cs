@@ -31,14 +31,14 @@ public class MyReplay : MonoBehaviour {
     {
         rigidBody.isKinematic = false;
         int frame = Time.frameCount % bufferFrames;
-        Debug.Log("Wrinting frame " + frame);
+        //Debug.Log("Wrinting frame " + frame);
         keyFrames[frame] = new MyKeyFrame(Time.time, transform.position, transform.rotation);
     }
     void PlayBack()
     {
         rigidBody.isKinematic = true;
         int frame = Time.frameCount % bufferFrames;
-        Debug.Log("Reading frame " + frame);
+        //Debug.Log("Reading frame " + frame);
         transform.position = keyFrames[frame].pos;
         transform.rotation = keyFrames[frame].rot;
     }
