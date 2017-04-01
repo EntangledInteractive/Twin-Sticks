@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CamerPan : MonoBehaviour {
-
+    private GameObject player;
 	// Use this for initialization
 	void Start () {
-		
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        print("Rhoriz " + Input.GetAxis("Rhoriz"));
-       // print("Rvert " + Input.GetAxis("Rvert"));
+	void LateUpdate () {
+        transform.LookAt(player.transform);
 	}
 }
